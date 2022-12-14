@@ -1,0 +1,14 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  padding: 0 50px;
+  border-radius: 5px;
+  border: 1px solid #2D2D2D;
+  font-size: 13px;
+  cursor: pointer;
+  &:hover {
+    font-weight: 500;
+  }
+}

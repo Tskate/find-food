@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .picture {
+    height: calc(100vh - 126px - 50px);
+    width: 45%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      float: left;
+    }
+  }
+
+  .title {
+    text-align: right;
+    flex-grow: 1;
+    .text {
+      color: $logo_font_color;
+      font-size: 74px;
+    }
+    .link {
+      text-decoration: none;
+      &:visited {
+        color: $logo_font_color;
+      }
+      .search {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        gap: 15px;
+        padding-top: 15px;
+        span {
+          font-size: 30px;
+        }
+
+      }
+    }
+
+  }
+
+}

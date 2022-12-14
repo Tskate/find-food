@@ -1,0 +1,14 @@
+.container {
+  text-align: center;
+  width: 230px;
+}
+.container .title {
+  font-size: 36px;
+  color: #112e3e;
+}
+.container .subtitle {
+  font-size: 13px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=Logo.module.css.map */

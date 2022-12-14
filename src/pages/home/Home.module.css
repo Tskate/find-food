@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container .picture {
+  height: calc(100vh - 126px - 50px);
+  width: 45%;
+}
+.container .picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  float: left;
+}
+.container .title {
+  text-align: right;
+  flex-grow: 1;
+}
+.container .title .text {
+  color: #112e3e;
+  font-size: 74px;
+}
+.container .title .link {
+  text-decoration: none;
+}
+.container .title .link:visited {
+  color: #112e3e;
+}
+.container .title .link .search {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 15px;
+  padding-top: 15px;
+}
+.container .title .link .search span {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=Home.module.css.map */
