@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.cardContainer {
+  border: 1px solid $adding_font_color;
+  width: 100%;
+  height: 400px;
+  @include flexColumn;
+  gap: 5%;
+
+  .upPart {
+    @include flexRow;
+    gap: 40px;
+    height: 70%;
+
+    .picture {
+     min-width: 40%;
+      img {
+        width:100%;
+        height:100%;
+        object-fit: cover;
+      }
+    }
+
+    .description {
+      padding-top: 30px;
+      @include flexColumn;
+      gap: 10px;
+      h3 {
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 0.11em;
+      }
+      p {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.11em;
+      }
+    }
+
+    .score {
+      padding-top: 30px;
+      padding-right: 24px;
+      font-size: 24px;
+    }
+  }
+
+
+}

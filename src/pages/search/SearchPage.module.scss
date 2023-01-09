@@ -1,0 +1,10 @@
+@import '../../styles/mixins';
+
+.searchPage {
+  @include flexColumn;
+  gap: 50px;
+  .content {
+    @include flexRow;
+    gap: 10%;
+  }
+}

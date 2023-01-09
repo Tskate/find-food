@@ -1,0 +1,25 @@
+@import "../../../styles/mixins";
+
+.container {
+  @include flexRow;
+  padding: 24px;
+  width: 100%;
+  align-content: flex-end;
+  div {
+    @include flexRow;
+    flex-grow: 1;//??????
+    align-items: center;
+    gap: 15px;
+  }
+  .type {
+    font-weight: 500;
+    font-size: 24px;
+  }
+  .review, .booking, .favourite {
+    cursor: pointer;
+  }
+  .favourite {
+    width: content-box;
+    flex-grow: 0;
+  }
+}
