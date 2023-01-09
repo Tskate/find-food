@@ -8,7 +8,7 @@ const Home:FC = () => {
     return (
         <div className={styles.container}>
             <div className={styles.picture}>
-                <img src={background}/>
+                <img src={background} alt="background-img"/>
             </div>
             <div className={styles.title}>
                 <h1 className={styles.text}>Find the</h1>
@@ -17,7 +17,7 @@ const Home:FC = () => {
                 <Link to="search" className={styles.link}>
                     <div className={styles.search}>
                         <span>search</span>
-                        <img src={arrow}/>
+                        <img src={arrow} alt="arrow-icon"/>
                     </div>
                 </Link>
             </div>
