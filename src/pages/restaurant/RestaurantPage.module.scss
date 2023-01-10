@@ -1,0 +1,14 @@
+@import "../../styles/mixins";
+
+.pageContainer {
+  @include flexColumn;
+  gap: 20px;
+  .header {
+    @include flexRow;
+    justify-content: space-between;
+
+    .score {
+      font-size: 24px;
+    }
+  }
+}

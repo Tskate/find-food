@@ -2,28 +2,37 @@ import {FC} from "react";
 import styles from './RestaurantCard.module.scss'
 import img from '../../assets/exampleRest1.png'
 import RestaurantInfoSection from "./restaurantInfoSection/RestaurantInfoSection";
+import {AddressType} from "../../types/restaurantType";
+import {ReviewType} from "../../types/reviewType";
 
-const RestaurantCard:FC = () => {
+type RestaurantCardProps = {
+    id: number,
+    name: string,
+    type: string,
+    reviewAmount: number,
+    address: AddressType,
+    description: string,
+    photo: any,
+}
+const RestaurantCard:FC<RestaurantCardProps> = ({id, name, address, type, reviewAmount, description, photo}) => {
+
     return (
         <div className={styles.cardContainer}>
            <div className={styles.upPart}>
                <div className={styles.picture}>
-                   <img src={img} alt="restaurant-photo"/>
+                   <img src={photo.link} alt="restaurant-photo"/>
                </div>
                <div className={styles.description}>
-                   <h3>AlexGut Grill</h3>
+                   <h3>{name}</h3>
                    <p>
-                       М'ясний ресторан "AlexGut Grill Pub"
-                       зустрічає гостей на вулиці Кудряшова у Києві.
-                       Родзинкою закладу вважається відкритий гриль
-                       у залі.
+                       {description}
                    </p>
                </div>
                <div className={styles.score}>
                     <p><span>5</span>/5</p>
                </div>
            </div>
-           <RestaurantInfoSection/>
+           <RestaurantInfoSection type={type} address={address} reviewAmount={reviewAmount}/>
         </div>
     )
 }

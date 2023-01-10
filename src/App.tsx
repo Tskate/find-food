@@ -2,9 +2,11 @@ import React from 'react';
 import './App.module.scss';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/home/Home";
-import Search from "./pages/search/SearchPage";
+import RestaurantPage from "./pages/restaurant/RestaurantPage";
+import SearchPage from "./pages/search/SearchPage";
 import Header from "./components/header/Header";
 import styles from './App.module.scss'
+
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
               <Header/>
               <Routes>
                   <Route path="/" element={<Home/>}/>
-                  <Route path="search" element={<Search/>}/>
+                  <Route path="search" element={<SearchPage/>}/>
+                  <Route path="search/1" element={<RestaurantPage/>}/>
               </Routes>
           </BrowserRouter>
       </div>

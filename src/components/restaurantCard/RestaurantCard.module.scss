@@ -26,6 +26,10 @@
       padding-top: 30px;
       @include flexColumn;
       gap: 10px;
+      height: calc(100%);
+      width: calc(100%);
+      overflow: hidden;
+      text-overflow: ellipsis;
       h3 {
         font-weight: 700;
         font-size: 36px;

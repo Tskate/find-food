@@ -4,17 +4,27 @@ import reviewIcon from '../../../assets/icons/review-icon.svg'
 import bookingIcon from '../../../assets/icons/menu-book-icon.svg'
 import locationIcon from '../../../assets/icons/location-icon.svg'
 import favoriteIcon from '../../../assets/icons/favourite-icon.svg'
+import {AddressType} from "../../../types/restaurantType";
 
-const RestaurantInfoSection:FC = () => {
+type RestaurantInfoSectionType = {
+    type: string,
+    reviewAmount: number,
+    address: AddressType
+}
+const RestaurantInfoSection:FC<RestaurantInfoSectionType> = ({type, reviewAmount, address}) => {
+
+    const formAddress = (address: AddressType): string => {
+        return `${address.city}, ${address.street} ${address.building} `
+    }
     return(
         <div className={styles.container}>
             <div className={styles.type}>
-                Ресторан
+                {type}
             </div>
             <div className={styles.review}>
                     <img src={reviewIcon} alt="review-icon"/>
                     <p className={styles.title}>
-                        Відгуки (<span></span>)
+                        Відгуки (<span>{reviewAmount}</span>)
                     </p>
             </div>
             <div className={styles.booking}>
@@ -26,7 +36,7 @@ const RestaurantInfoSection:FC = () => {
             <div className={styles.location}>
                 <img src={locationIcon} alt="location-icon"/>
                 <p className={styles.title}>
-                    Київ, вул. Сагайдачного 10/5
+                    {formAddress(address)}
                 </p>
             </div>
             <div className={styles.favourite}>

@@ -1,0 +1,12 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.reviewContainer {
+  @include flexColumn;
+  border: 1px solid $base_font_color;
+  padding: 23px;
+  .header {
+    @include flexRow;
+    justify-content: space-between;
+  }
+}
