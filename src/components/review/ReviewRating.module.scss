@@ -1,0 +1,14 @@
+@import "../../styles/mixins";
+.container {
+  @include flexRow;
+  gap: 30px;
+  padding: 23px;
+  h4 {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 15px;
+    span {
+      font-weight: 600;
+    }
+  }
+}

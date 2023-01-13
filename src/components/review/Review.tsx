@@ -1,26 +1,28 @@
 import {FC} from "react";
 import styles from './Review.module.scss'
+import {ReviewType} from "../../types/reviewType";
+import {formDate} from "../../services/formDate";
+import ReviewRating from "./ReviewRating";
 
 type ReviewProps = {
-    username: string,
-    text: string,
-    date: Date,
+    review: ReviewType
 
 
 }
-const Review:FC<ReviewProps> = ({username, text, date}) => {
+const Review:FC<ReviewProps> = ({review}) => {
+
+    formDate(review.date)
     return(
         <div className={styles.reviewContainer}>
             <div className={styles.header}>
-                <h5>{username}</h5>
-                <p>{date.toISOString()}</p>
+                <h5>{review.userId}</h5>
+                <p>{formDate(review.date)}</p>
             </div>
             <div className={styles.body}>
-                {text}
+                <p>{review.text}</p>
             </div>
-            <div className={styles.footer}>
-
-            </div>
+            <div className={styles.line}></div>
+            <ReviewRating rating={review.rating}/>
         </div>
     )
 }

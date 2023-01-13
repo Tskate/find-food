@@ -3,6 +3,10 @@
 .pageContainer {
   @include flexColumn;
   gap: 20px;
+
+  h3 {
+    font-size: 24px;
+  }
   .header {
     @include flexRow;
     justify-content: space-between;
@@ -10,5 +14,27 @@
     .score {
       font-size: 24px;
     }
+  }
+
+  .gallery {
+    @include flexRow;
+    gap: 20px;
+
+    .infoCard {
+      min-width: 30%;
+      @include flexColumn;
+      justify-content: space-between;
+      .info {
+        @include flexColumn;
+        gap: 10px;
+        font-size: 18px;
+      }
+
+    }
+  }
+
+  .description, .menu, .reviews {
+    @include flexColumn;
+    gap: 10px;
   }
 }

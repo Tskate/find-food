@@ -5,6 +5,7 @@ import bookingIcon from '../../../assets/icons/menu-book-icon.svg'
 import locationIcon from '../../../assets/icons/location-icon.svg'
 import favoriteIcon from '../../../assets/icons/favourite-icon.svg'
 import {AddressType} from "../../../types/restaurantType";
+import {formAddress} from "../../../services/formAddress";
 
 type RestaurantInfoSectionType = {
     type: string,
@@ -13,9 +14,7 @@ type RestaurantInfoSectionType = {
 }
 const RestaurantInfoSection:FC<RestaurantInfoSectionType> = ({type, reviewAmount, address}) => {
 
-    const formAddress = (address: AddressType): string => {
-        return `${address.city}, ${address.street} ${address.building} `
-    }
+
     return(
         <div className={styles.container}>
             <div className={styles.type}>

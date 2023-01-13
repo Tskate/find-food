@@ -1,9 +1,10 @@
 import {FC} from "react";
 import styles from './SearchPage.module.scss'
 import SearchBar from "../../components/common/searchBar/SearchBar";
-import FilterList from "../../components/filterList/FilterList";
+import FilterList from "../../components/common/filterList/FilterList";
 import RestaurantCard from "../../components/restaurantCard/RestaurantCard";
 import {useSelector} from "react-redux";
+import {RestaurantType} from "../../types/restaurantType";
 
 const SearchPage:FC = () => {
     const restaurants = useSelector((state: any) => state.restaurants.restaurants)
@@ -13,16 +14,16 @@ const SearchPage:FC = () => {
             <div className={styles.content}>
                 <FilterList title={"Кухня"} options={[{id: 1, name: 'Європейська'}, {id: 2, name: 'Азіатська'}, {id: 3, name: 'Мексиканська'}]}/>
                 <div className={styles.restaurantsList}>
-                    {restaurants.map((restaurant:any) =>
+                    {restaurants.map((restaurant:RestaurantType) =>
                         <RestaurantCard
                             key={restaurant.id}
                             id={+restaurant.id}
-                            name={restaurant.name.toString()}
+                            name={restaurant.name}
                             photo={restaurant.photos[0]}
-                            reviewAmount={restaurant.reviews.length}
-                            description={restaurant.description.toString()}
+                            reviews={restaurant.reviews}
+                            description={restaurant.description}
                             address={restaurant.address}
-                            type={restaurant.type.toString()}
+                            type={restaurant.type}
                         />)}
                 </div>
             </div>
