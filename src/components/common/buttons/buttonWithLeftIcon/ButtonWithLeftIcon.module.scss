@@ -1,0 +1,17 @@
+@import "../../../../styles/mixins";
+
+.container {
+  @include flexRow;
+  gap: 10px;
+  align-items: center;
+  max-width: 150px;
+  text-align: center;
+  cursor: pointer;
+  .icon {
+    width: 35px;
+    height: 35px;
+    img {
+      height: 100%;
+    }
+  }
+}

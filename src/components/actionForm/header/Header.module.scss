@@ -1,0 +1,6 @@
+@import "../../../styles/mixins";
+.header {
+  @include flexRow;
+  width: 100%;
+  justify-content: space-between;
+}

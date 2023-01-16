@@ -1,0 +1,15 @@
+@import "../../../styles/mixins";
+
+.container {
+  @include flexColumn;
+  gap: 25px;
+  .inputBlock {
+    @include flexColumn;
+    gap: 10px;
+  }
+  .buttonsBlock {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
+  }
+}

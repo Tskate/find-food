@@ -1,20 +1,21 @@
-import {FC} from "react";
+import React, {FC} from "react";
 import styles from './RestaurantPage.module.scss'
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
-import {RestaurantType} from "../../types/restaurantType";
-import {formAddress} from "../../services/formAddress";
+import {RestaurantType, TagType} from "../../types/restaurantType";
 import Review from "../../components/review/Review";
 import {ReviewType} from "../../types/reviewType";
 import {calculateAverageGrade} from "../../services/calculateAverageGrade";
 import {selectAllGrades} from "../../services/selectAllGrades";
 import PhotoGallery from "../../components/gallery/PhotoGallery";
-import ButtonWithBorder from "../../components/common/buttons/buttonWithBorder/ButtonWithBorder";
+import RestaurantPageInfoSection from "../../components/restaurantPageInfoSection/RestaurantPageInfoSection";
+import ReviewForm from "../../components/reviewForm/ReviewForm";
+import Tag from "../../components/common/tag/Tag";
 
 const RestaurantPage:FC = () => {
     const {id} = useParams()
     const restaurant = useSelector<any, any>((state) => {
-        return state.restaurants.restaurants.find((item:RestaurantType) => item.id == Number(id))
+        return state.restaurants.restaurants.find((item:RestaurantType) => item.id === Number(id))
         }
     )
 
@@ -33,22 +34,7 @@ const RestaurantPage:FC = () => {
             </div>
             <div className={styles.gallery}>
                 <PhotoGallery photos={restaurant.photos}/>
-                <div className={styles.infoCard}>
-                    <div className={styles.info}>
-                        <h5>Адреса :</h5>
-                        <p>{formAddress(restaurant.address)}</p>
-                        <h5>Графік роботи :</h5>
-                        <p>{restaurant.workingHours}</p>
-                        <h5>Кухня :</h5>
-                        <p>Європейська</p>
-                    </div>
-                    <div className={styles.phone}>
-
-                    </div>
-                    <div className={styles.actions}>
-                        <ButtonWithBorder text={"Забронювати столик"}/>
-                    </div>
-                </div>
+                <RestaurantPageInfoSection address={restaurant.address} workingHours={restaurant.workingHours}/>
             </div>
             <div className={styles.description}>
                 <h3>Опис</h3>
@@ -59,12 +45,19 @@ const RestaurantPage:FC = () => {
             <div className={styles.menu}>
                 <h3>Меню</h3>
             </div>
+            <div className={styles.features}>
+                <h3>Особливості</h3>
+                <ul>
+                    {restaurant.tags.map((tag:TagType) => <Tag key={tag.id} title={tag.title}/>)}
+                </ul>
+            </div>
             <div className={styles.reviews}>
                 <h3>Відгуки</h3>
                 <div>
                     {restaurant.reviews.map((review:ReviewType) => <Review key={review.id} review={review}/>)}
                 </div>
             </div>
+            <ReviewForm/>
         </div>
     )
 }

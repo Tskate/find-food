@@ -1,0 +1,14 @@
+@import "../../../styles/mixins";
+
+.container {
+  @include flexColumn;
+  gap: 5px;
+  .title {
+    font-size: 13px;
+    font-weight: bolder;
+  }
+  .input {
+    @include border;
+    padding: 10px;
+  }
+}

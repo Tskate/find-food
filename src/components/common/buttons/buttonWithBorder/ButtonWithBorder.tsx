@@ -4,11 +4,16 @@ import styles from './ButtonWithBorder.module.scss'
 type ButtonWithBorderProps = {
     text: string,
     extraStyle?: object
+    onClick?: () => void
 }
 
-const ButtonWithBorder:FC<ButtonWithBorderProps> = ({text, extraStyle}) => {
+const ButtonWithBorder:FC<ButtonWithBorderProps> = ({text, extraStyle, onClick}) => {
     return(
-        <div className={styles.btn} style={extraStyle}>
+        <div
+            className={styles.btn}
+            style={extraStyle}
+            onClick={onClick}
+        >
             {text}
         </div>
     )

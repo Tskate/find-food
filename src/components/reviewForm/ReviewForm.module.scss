@@ -1,0 +1,24 @@
+@import "../../styles/mixins";
+
+.container {
+  @include flexColumn;
+  gap: 10px;
+  .form {
+    @include flexColumn;
+    gap: 10px;
+    .textArea {
+      width: 100%;
+      height: 180px;
+      @include border;
+      resize: none;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .ratingSection {
+      @include flexRow;
+      gap: 40px;
+
+    }
+  }
+}

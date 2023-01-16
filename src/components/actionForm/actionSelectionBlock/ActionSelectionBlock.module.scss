@@ -1,0 +1,9 @@
+@import "../../../styles/mixins";
+.buttonsContainer {
+  width: 70%;
+  @include flexColumn;
+  gap: 16px;
+  p{
+    align-self: center;
+  }
+}

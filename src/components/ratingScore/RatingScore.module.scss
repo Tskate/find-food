@@ -1,0 +1,18 @@
+@import "../../styles/mixins";
+
+.container {
+  @include flexRow;
+  gap: 10px;
+  align-items: center;
+  h4 {
+    font-weight: 300;
+    font-size: 14px
+  }
+  .scoreContainer {
+    @include flexRow;
+    gap: 5px;
+    img {
+      height: 100%;
+    }
+  }
+}
